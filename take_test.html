@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Test - Stuby AI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2b2b2b); /* Fallback gradient */
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('take_text_img2_main.jpg'), linear-gradient(135deg, #1a1a1a, #2b2b2b);
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-repeat: no-repeat; /* Prevents tiling of the image */
+            background-attachment: fixed; /* Makes the background static while scrolling */
+            background-position: top center; /* Aligns the background to the top center */
+            overflow-x: hidden;
+        }
+        
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #444;
+        }
+
+        form {
+            margin-top: 120px;
+            max-width: 700px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form h2 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 10px;
+            background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question:hover {
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.5);
+        }
+
+        .question p {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .question label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+            padding-left: 30px;
+            position: relative;
+            color: #b0b0b0;
+            transition: color 0.3s ease;
+        }
+
+        .question label input {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .question label:hover {
+            color: #007aff;
+            text-shadow: 0 0 10px rgba(0, 122, 255, 0.5);
+        }
+
+        .button {
+            display: inline-block; /* Makes the link behave like a button */
+            padding: 10px 20px; /* Adds space inside the button */
+            background-color: darkblue; /* Button background color */
+            color: white; /* Text color */
+            text-decoration: none; /* Removes the underline from the link */
+            border-radius: 5px; /* Rounds the corners */
+            text-align: center; /* Centers text */
+            font-size: 18px; /* Sets the font size */
+            cursor: pointer; /* Changes the cursor to a pointer on hover */
+            transition: background 0.3s ease, transform 0.2s ease; /* Adds hover animation */
+            box-shadow: 0 4px 15px rgba(0, 0, 255, 0.5); /* Adds a shadow */
+            margin: 0 auto;
+        }
+        
+        .button:hover {
+            background-color: royalblue; /* Hover background color */
+            box-shadow: 0 8px 25px rgba(0, 0, 255, 0.7); /* Increases shadow intensity */
+            transform: scale(1.1); /* Grows slightly on hover */
+        }
+        
+        .button:active {
+            transform: scale(0.9); /* Shrinks slightly when clicked */
+        }
+        
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 22px;
+            }
+
+            form {
+                width: 95%;
+                margin-top: 150px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stuby AI - Take Test</h1>
+        <!--<nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        -->
+    </header>
+
+    <form id="test-form">
+        <h2>Discover Your Learning Style</h2>
+        <!-- Questions -->
+        <div class="question">
+            <p>1. When learning a new concept, I prefer:</p>
+            <label><input type="radio" name="q1" value="Visual"> Seeing diagrams, charts, and videos</label>
+            <label><input type="radio" name="q1" value="Story-based"> Hearing stories or anecdotes</label>
+            <label><input type="radio" name="q1" value="Application-based"> Doing hands-on activities</label>
+            <label><input type="radio" name="q1" value="Analytical"> Analyzing data or formulas</label>
+        </div>
+
+        <div class="question">
+            <p>2. To remember something, I:</p>
+            <label><input type="radio" name="q2" value="Visual"> Draw or visualize it in my head</label>
+            <label><input type="radio" name="q2" value="Story-based"> Create a story around it</label>
+            <label><input type="radio" name="q2" value="Application-based"> Practice using it in real life</label>
+            <label><input type="radio" name="q2" value="Creativity"> Invent a creative way to remember</label>
+        </div>
+
+        <div class="question">
+            <p>3. Which activity appeals most to you?</p>
+            <label><input type="radio" name="q3" value="Analytical"> Solving puzzles or logic problems</label>
+            <label><input type="radio" name="q3" value="Creativity"> Painting, drawing, or designing</label>
+            <label><input type="radio" name="q3" value="Story-based"> Writing or storytelling</label>
+            <label><input type="radio" name="q3" value="Application-based"> Building or creating things</label>
+        </div>
+        
+        <div class="question">
+            <p>4. Which activity appeals most to you?</p>
+            <label><input type="radio" name="q4" value="Analytical"> Solving puzzles or logic problems</label>
+            <label><input type="radio" name="q4" value="Creativity"> Painting, drawing, or designing</label>
+            <label><input type="radio" name="q4" value="Story-based"> Writing or storytelling</label>
+            <label><input type="radio" name="q4" value="Application-based"> Building or creating things</label>
+        </div>
+
+        <div class="question">
+            <p>5. Which activity appeals most to you?</p>
+            <label><input type="radio" name="q5" value="Analytical"> Solving puzzles or logic problems</label>
+            <label><input type="radio" name="q5" value="Creativity"> Painting, drawing, or designing</label>
+            <label><input type="radio" name="q5" value="Story-based"> Writing or storytelling</label>
+            <label><input type="radio" name="q5" value="Application-based"> Building or creating things</label>
+        </div>
+
+        <div class="question">
+            <p>3. Which activity appeals most to you?</p>
+            <label><input type="radio" name="q6" value="Analytical"> Solving puzzles or logic problems</label>
+            <label><input type="radio" name="q6" value="Creativity"> Painting, drawing, or designing</label>
+            <label><input type="radio" name="q6" value="Story-based"> Writing or storytelling</label>
+            <label><input type="radio" name="q6" value="Application-based"> Building or creating things</label>
+        </div>
+
+        <div class="question">
+            <p>3. Which activity appeals most to you?</p>
+            <label><input type="radio" name="q7" value="Analytical"> Solving puzzles or logic problems</label>
+            <label><input type="radio" name="q7" value="Creativity"> Painting, drawing, or designing</label>
+            <label><input type="radio" name="q7" value="Story-based"> Writing or storytelling</label>
+            <label><input type="radio" name="q7" value="Application-based"> Building or creating things</label>
+        </div>
+
+        <div class="question">
+            <p>3. Which activity appeals most to you?</p>
+            <label><input type="radio" name="q8" value="Analytical"> Solving puzzles or logic problems</label>
+            <label><input type="radio" name="q8" value="Creativity"> Painting, drawing, or designing</label>
+            <label><input type="radio" name="q8" value="Story-based"> Writing or storytelling</label>
+            <label><input type="radio" name="q8" value="Application-based"> Building or creating things</label>
+        </div>
+
+        <div class="question">
+            <p>3. Which activity appeals most to you?</p>
+            <label><input type="radio" name="q9" value="Analytical"> Solving puzzles or logic problems</label>
+            <label><input type="radio" name="q9" value="Creativity"> Painting, drawing, or designing</label>
+            <label><input type="radio" name="q9" value="Story-based"> Writing or storytelling</label>
+            <label><input type="radio" name="q9" value="Application-based"> Building or creating things</label>
+        </div>
+
+        <div class="question">
+            <p>3. Which activity appeals most to you?</p>
+            <label><input type="radio" name="q10" value="Analytical"> Solving puzzles or logic problems</label>
+            <label><input type="radio" name="q10" value="Creativity"> Painting, drawing, or designing</label>
+            <label><input type="radio" name="q10" value="Story-based"> Writing or storytelling</label>
+            <label><input type="radio" name="q10" value="Application-based"> Building or creating things</label>
+        </div>
+
+        <a href="test_results.html" class="button" style="display: block; text-align: center; margin: 0 auto; width: fit-content;">Submit Test</a>
+
+
+    </form>
+</body>
+</html>

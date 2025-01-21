@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Analysis - Stuby AI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-image: url('take_text_img2_main.jpg'), linear-gradient(135deg, #1a1a1a, #2b2b2b);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top center;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #444;
+        }
+
+        .content {
+            margin-top: 100px;
+            max-width: 900px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+            text-align: center;
+        }
+
+        .content h2 {
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .results {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .results .result {
+            flex: 1;
+            background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .results .result:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 122, 255, 0.7);
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: linear-gradient(135deg, #007aff, #0056d6);
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 12px rgba(0, 122, 255, 0.7);
+        }
+        
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Stuby AI - Learning Style Analysis</h1>
+    </header>
+
+    <div class="content">
+        
+        <div class="chart-container">
+            <canvas id="learningStyleChart" width="300" height="300"></canvas>
+        </div>
+        <div class="results">
+            <div class="result">
+                <h3>Story-Based</h3>
+                <p>Stories help you understand concepts better and make learning enjoyable.</p>
+            </div>
+            <div class="result">
+                <h3>Creative</h3>
+                <p>Engaging in artistic and imaginative tasks enhances your learning.</p>
+            </div>
+            <div class="result">
+                <h3>Visual</h3>
+                <p>You prefer learning through visuals like charts and diagrams.</p>
+            </div>
+            <div class="result">
+                <h3>Analytical</h3>
+                <p>Data and logic are your tools for understanding concepts.</p>
+            </div>
+        </div><br>
+        <a href="chatbot.html" class="button">Ask Questions</a>
+    </div>
+
+
+    <script>
+        const ctx = document.getElementById('learningStyleChart').getContext('2d');
+        const data = {
+            labels: ['Story-Based', 'Creative', 'Visual', 'Analytical'],
+            datasets: [{
+                label: 'Learning Style Distribution',
+                data: [22, 50, 10, 18], // Replace with real values based on test responses
+                backgroundColor: [
+                    'rgba(0, 122, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(0, 122, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'doughnut',
+            data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(ctx, config);
+    </script>
+</body>
+</html>

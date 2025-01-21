@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2e2e2e;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+.main-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.input-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-box button {
+    background-color: #4caf50;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    background-color: #444444;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.learners {
+    margin-top: 20px;
+    display: flex;
+    gap: 0; /* No gap between boxes */
+    justify-content: space-between; /* Space out the boxes evenly */
+    
+}
+
+.learner-box {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    height: 200px;
+    opacity: 0; /* Start with hidden boxes */
+    text-align: center;
+}
+
+.learner-box h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.learner-box p {
+    margin: 5px 0;
+}
+
+.learner-box strong {
+    color: #4caf50;
+}
